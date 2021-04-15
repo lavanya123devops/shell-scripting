@@ -30,3 +30,4 @@ echo -e "Hai1\nBye1"
 # Syntax: echo -e "\e[COLmMESSAGE"
 
 echo -e "\e[31mWelcome to DevOps Training"
+echo "Good Evening"
