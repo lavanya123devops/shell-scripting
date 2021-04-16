@@ -11,13 +11,15 @@ sample2() {
   echo Hello from Funtion2
 
   echo First Argument in Function = $1
+  return 100
 }
 
 ## Access the function
 
 a=10
 sample1
-sample2 200 
+sample2 200
+echo Exit Status = $?
 echo b - $b
 
 
