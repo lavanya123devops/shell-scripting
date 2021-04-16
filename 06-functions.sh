@@ -2,7 +2,7 @@
 
 ## Declare the function
 function sample1() {
-    echo Hello from Function1
+  echo Hello from Function1
 }
 
 sample2() {
