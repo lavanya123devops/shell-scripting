@@ -17,7 +17,7 @@ sample2() {
 
 a=10
 sample1
-sample2
+sample2 200 
 echo b - $b
 
 
