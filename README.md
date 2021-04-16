@@ -4,7 +4,7 @@
 Printing Text on Screen
 Variables & Functions
 Input from Users
-Redirectors & Exit Status
+Quotes & Redirectors & Exit Status
 Conditions
 Loops
 ```
