@@ -1,0 +1,9 @@
+1. Fundamentally project components are designed to run on individual machine, But not all on one machine.
+    For each component we can write a separate script or one script ensures it calls the appropriate component.
+2. Keep the code dry, because there are common components.
+3. Re run of a script should never fail
+
+
+
+## Out of scope
+1. Security
