@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exit
+exit 1
