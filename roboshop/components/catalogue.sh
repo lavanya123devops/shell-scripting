@@ -23,7 +23,11 @@ Head "Extracting Downloaded Archive"
 cd /home/roboshop && unzip -o /tmp/catalogue.zip &>>$LOG && mv catalogue-main catalogue && cd /home/roboshop/catalogue && npm install &>>$LOG && chown roboshop:roboshop /home/roboshop -R
 Stat $?
 
-# mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
-# systemctl daemon-reload
-# systemctl start catalogue
-# systemctl enable catalogue
+Head "Update EndPoints in Service File"
+sed -i -e "s/MONGO_DNSNAME/mongodb.zsdevops01.online/" /home/roboshop/catalogue/systemd.service
+Stat $?
+
+
+Head "Setup SystemD Service"
+mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service && systemctl daemon-reload && systemctl start catalogue && systemctl enable catalogue &>>$LOG
+Stat $?
