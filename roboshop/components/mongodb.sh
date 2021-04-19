@@ -27,8 +27,6 @@ cd /tmp && unzip -o mongodb.zip &>>$LOG && cd mongodb-main
 Stat $?
 
 Head "Load Schema into MongoDB"
-pwd
-mongo --version
 for i in $(ls *.js); do
   echo "Loading $i"
   cat /tmp/sample | mongo
