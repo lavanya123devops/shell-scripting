@@ -29,7 +29,7 @@ Stat $?
 Head "Load Schema into MongoDB"
 for i in $(ls *.js); do
   echo "Loading $i"
-  mongo --host --port 27017
+  mongo --host localhost --port 27017
   Stat $?
 done
 
