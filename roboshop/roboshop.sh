@@ -2,6 +2,10 @@
 
 COMPONENT=$1
 
+
+LOG=/tmp/${COMPONENT}.log
+rm -f $LOG
+
 source components/common.sh
 
 if [ ! -f components/${COMPONENT}.sh ]; then
