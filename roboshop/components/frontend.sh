@@ -1,3 +1,6 @@
 #!/bin/bash
 
-echo Automating frontend component
+source common.sh
+
+OS_PREREQ
+

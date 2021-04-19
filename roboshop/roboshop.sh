@@ -7,4 +7,5 @@ if [ ! -f components/${COMPONENT}.sh ]; then
   exit 1
 fi
 
+export COMPONENT
 bash components/${COMPONENT}.sh
