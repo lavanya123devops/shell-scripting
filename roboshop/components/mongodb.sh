@@ -29,7 +29,7 @@ Stat $?
 Head "Load Schema into MongoDB"
 for i in $(ls *.js); do
   echo "Loading $i"
-  cat /tmp/sample | mongo
+  cat /tmp/sample | mongo --shell
   Stat $?
 done
 
