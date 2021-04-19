@@ -18,6 +18,7 @@ Stat $?
 
 Head "Start MongoDB Service"
 systemctl restart mongod && systemctl enable mongod &>>$LOG
+Stat $?
 
 DOWNLOAD_COMPONENT
 
