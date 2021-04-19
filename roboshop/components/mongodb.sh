@@ -30,7 +30,7 @@ Head "Load Schema into MongoDB"
 pwd
 for i in $(ls *.js); do
   echo "Loading $i"
-  mongo < $i
+  mongo --host  localhost < $i
   Stat $?
 done
 
