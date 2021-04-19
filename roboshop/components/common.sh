@@ -7,7 +7,7 @@ Head() {
 
 OS_PREREQ() {
   set-hostname ${COMPONENT}
-  Head " Updating APT Repos "
+  Head "Updating APT Repos"
   apt update &>>$LOG
 }
 
