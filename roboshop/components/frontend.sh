@@ -14,7 +14,7 @@ rm -rf /var/www/html /etc/nginx/sites-enabled/default /etc/nginx/sites-available
 
 Head "Unzip Downloaded Archive"
 cd /var/www
-unzip /tmp/frontend.zip
+unzip -o /tmp/frontend.zip &>>$LOG
 mv frontend-main/* .
 mv static html
 rm -rf frontend-main README.md
