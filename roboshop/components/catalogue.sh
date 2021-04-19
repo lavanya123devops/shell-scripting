@@ -16,7 +16,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Extracting Downloaded Archive"
-cd /home/roboshop && unzip -o /tmp/catalogue.zip && mv catalogue-main catalogue && cd /home/roboshop/catalogue && npm install
+cd /home/roboshop && unzip -o /tmp/catalogue.zip &>>$LOG && mv catalogue-main catalogue && cd /home/roboshop/catalogue && npm install &>>$LOG
 Stat $?
 
 # mv /home/roboshop/catalogue/systemd.service /etc/systemd/system/catalogue.service
