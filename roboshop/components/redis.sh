@@ -12,5 +12,5 @@ sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis/redis.conf
 Stat $?
 
 Head "Start Redis Service"
-systemctl restart redis && systemctl enable redis &>>$LOG
+systemctl restart redis
 Stat $?
