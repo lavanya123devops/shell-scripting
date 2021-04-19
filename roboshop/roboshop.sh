@@ -3,7 +3,7 @@
 COMPONENT=$1
 
 
-LOG=/tmp/${COMPONENT}.log
+export LOG=/tmp/${COMPONENT}.log
 rm -f $LOG
 
 source components/common.sh
