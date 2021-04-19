@@ -30,7 +30,7 @@ Head "Load Schema into MongoDB"
 pwd
 for i in $(ls *.js); do
   echo "Loading $i"
-  mongo --host  172.31.31.3 </tmp/sample
+  cat /tmp/sample | mongo --host  172.31.31.3 
   Stat $?
 done
 
