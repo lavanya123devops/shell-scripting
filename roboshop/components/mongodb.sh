@@ -27,9 +27,10 @@ cd /tmp && unzip -o mongodb.zip &>>$LOG && cd mongodb-main
 Stat $?
 
 Head "Load Schema into MongoDB"
+pwd
 for i in $(ls *.js); do
   echo "Loading $i"
-  mongo <$i
+  mongo < $i
   Stat $?
 done
 
