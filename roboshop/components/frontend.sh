@@ -15,11 +15,7 @@ rm -rf /var/www/html /etc/nginx/sites-enabled/default /etc/nginx/sites-available
 Stat $?
 
 Head "Unzip Downloaded Archive"
-cd /var/www
-unzip -o /tmp/frontend.zip &>>$LOG
-mv frontend-main/* .
-mv static html
-rm -rf frontend-main README.md
+cd /var/www && unzip -o /tmp/frontend.zip &>>$LOG && mv frontend-main/* . && mv static html && rm -rf frontend-main README.md
 Stat $?
 
 Head "Update Nginx Configuration"
