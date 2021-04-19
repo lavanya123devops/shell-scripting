@@ -23,7 +23,7 @@ Stat $?
 DOWNLOAD_COMPONENT
 
 Head "Extract Downloaded Archive"
-cd /tmp && unzip mongodb.zip &>>$LOG && cd mongodb-main
+cd /tmp && unzip -o mongodb.zip &>>$LOG && cd mongodb-main
 Stat $?
 
 Head "Load Schema into MongoDB"
