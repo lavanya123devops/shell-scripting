@@ -28,9 +28,10 @@ Stat $?
 
 Head "Load Schema into MongoDB"
 pwd
+mongo --version
 for i in $(ls *.js); do
   echo "Loading $i"
-  cat /tmp/sample | mongo --host  172.31.31.3 
+  cat /tmp/sample | mongo --host  172.31.31.3
   Stat $?
 done
 
