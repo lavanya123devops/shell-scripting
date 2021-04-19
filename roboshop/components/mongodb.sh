@@ -29,7 +29,7 @@ Stat $?
 Head "Load Schema into MongoDB"
 for i in $(ls *.js); do
   echo "Loading $i"
-  mongo --idleSessionTimeout 30 --authenticationDatabase admin  <$i
+  mongo --idleSessionTimeout 30 --gssapiServiceName mongod  <$i
   Stat $?
 done
 
