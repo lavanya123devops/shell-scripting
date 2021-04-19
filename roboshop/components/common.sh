@@ -15,3 +15,7 @@ ERROR() {
   echo -e "\e[1;31m$1\e[0m"
 }
 
+DOWNLOAD_COMPONENT() {
+  Head "Downloading ${COMPONENT} Component"
+  curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/zelar-soft-roboshop/${COMPONENT}/archive/main.zip"
+}
