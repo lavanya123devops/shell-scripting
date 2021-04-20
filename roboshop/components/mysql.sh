@@ -27,7 +27,7 @@ cd /tmp && unzip -o /tmp/mysql.zip &>>$LOG
 Stat $?
 
 Head "Install MySQL Client"
-apt install mariadb-client-core -y &>>$LOG
+apt install mysql-client -y &>>$LOG
 Stat $?
 
 Head "Load Schema"
