@@ -17,6 +17,11 @@ apt install rabbitmq-server -y --fix-missing &>>$LOG
 Stat $?
 
 Head "Setup Application User and Setup Permissions"
-rabbitmqctl add_user roboshop roboshop123 &>>$LOG && rabbitmqctl set_user_tags roboshop administrator &>>$LOG && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$LOG
+rabbitmqctl list_users | grep roboshop &>>$LOG
+if [ $? -ne 0 ]; then
+  rabbitmqctl add_user roboshop roboshop123 &>>$LOG && rabbitmqctl set_user_tags roboshop administrator &>>$LOG && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$LOG
+else
+  rabbitmqctl set_user_tags roboshop administrator &>>$LOG && rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>>$LOG
+fi 
 Stat $?
 
