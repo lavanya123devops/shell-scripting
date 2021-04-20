@@ -17,13 +17,17 @@ mkdir -p /data
 docker ps | grep mysql -i &>>$LOG
 if [ $? -ne 0 ]; then
   docker run -v /data:/var/lib/mysql --name mysql -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=password mysql:5.7.33 &>>$LOG
-fi 
+fi
 Stat $?
 
 DOWNLOAD_COMPONENT
 
 Head "Extract Downloaded Schema"
 cd /tmp && unzip -o /tmp/mysql.zip &>>$LOG
+Stat $?
+
+Head "Install MySQL Client"
+apt install mariadb-client-core -y &>>$LOG
 Stat $?
 
 Head "Load Schema"
