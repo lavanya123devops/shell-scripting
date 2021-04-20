@@ -27,4 +27,4 @@ Head "Load Schema"
 cd mysql-main
 IPADDR=$(hostname -i)
 mysql -h ${IPADDR} -uroot -ppassword <shipping.sql &>>$LOG
-STAT $?
+Stat $?
