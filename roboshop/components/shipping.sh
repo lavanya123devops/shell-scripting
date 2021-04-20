@@ -22,7 +22,11 @@ Head "Extract Downloaded Archive"
 cd /home/roboshop && rm -rf shipping && unzip -o /tmp/shipping.zip &>>$LOG && mv shipping-main shipping && cd /home/roboshop/shipping &&  mvn clean package  &>>$LOG && chown roboshop:roboshop /home/roboshop -R && mv target/shipping-1.0.jar shipping.jar  &>>$LOG
 Stat $?
 
-# mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service
-# systemctl daemon-reload
-# systemctl start shipping
-# systemctl enable shipping
+Head "Update EndPoints in Service File"
+sed -i -e "s/CARTENDPOINT/cart.zsdevops01.online/" -e "s/DBHOST/mysql.zsdevops01.online/" /home/roboshop/shipping/systemd.service
+Stat $?
+
+
+Head "Setup SystemD Service"
+mv /home/roboshop/shipping/systemd.service /etc/systemd/system/shipping.service && systemctl daemon-reload && systemctl start shipping && systemctl enable shipping &>>$LOG
+Stat $?
