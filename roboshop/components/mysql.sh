@@ -14,7 +14,10 @@ Stat $?
 
 Head "Start MySQL Service with Docker"
 mkdir -p /data
-docker run -v /data:/var/lib/mysql -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=password mysql:5.7.33 &>>$LOG
+docker ps | grep mysql -i &>>$LOG
+if [ $? -ne 0 ]; then
+  docker run -v /data:/var/lib/mysql --name mysql -p 3306:3306 -d -e MYSQL_ROOT_PASSWORD=password mysql:5.7.33 &>>$LOG
+fi 
 Stat $?
 
 DOWNLOAD_COMPONENT
